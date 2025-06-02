@@ -1,0 +1,6 @@
+Django>=4.2,<5.0
+djangorestframework>=3.14
+google-generativeai>=0.3.0
+psycopg2-binary>=2.9  # If using PostgreSQL, remove if not needed
+python-dotenv>=1.0.0  # For environment variable management
+django-cors-headers>=4.0  # For handling CORS in APIs
