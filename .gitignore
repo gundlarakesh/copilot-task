@@ -106,7 +106,7 @@ Thumbs.db
 # Environments
 .env
 .env.*
-venv/
+.venv/
 ENV/
 env/
 venv.bak/
