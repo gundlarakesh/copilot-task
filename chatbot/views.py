@@ -10,6 +10,8 @@ class ChatbotViewSet(viewsets.ViewSet):
     @action(detail=False, methods=["post"], url_path="query-data")
     def query_data(self, request):
         query = request.data.get("query")
+        if query is None:
+            return Response({"error": "query parameter is required."}, status=400)
         # Call the controller function
         result, sql_query = handle_chatbot_query(query)
         return Response({"result": result, "sql_query": sql_query})
