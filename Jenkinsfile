@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    enviroment {
+    environment {
         PROJECT_NAME="Chat_Bot"
     }
     stages {
