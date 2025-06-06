@@ -27,7 +27,7 @@ pipeline {
             steps{
                 bat "echo Stage: 3 Deploy ${env.PROJECT_NAME}"
                 bat """
-                ${env.ENV_PY_PATH} manage.py makemigrations
+                REM ${env.ENV_PY_PATH} manage.py makemigrations removing makemigrations because project will have migration scripts
                 ${env.ENV_PY_PATH} manage.py migrate
                 REM ${env.ENV_PY_PATH} -m python manage.py runserver 8000 to start server
                 """
