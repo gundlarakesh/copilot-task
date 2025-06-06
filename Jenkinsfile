@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         PROJECT_NAME="Chat_Bot"
+        ENV_PY_PATH=".venv\\Scripts\\python.exe"
     }
     stages {
         stage("Build"){
@@ -10,7 +11,7 @@ pipeline {
                 bat """
                     python -m venv .venv
                     call .venv\\Scripts\\activate.bat
-                    .venv\\Scripts\\python.exe -m pip install -r requirements.txt
+                    ${env.ENV_PY_PATH} -m pip install -r requirements.txt
                 """
             }
         }
@@ -18,7 +19,7 @@ pipeline {
             steps{
                 bat "echo Stage: 2 Test ${env.PROJECT_NAME}"
                 bat """
-                .venv\\Scripts\\python.exe -m pytest || exit 0
+                ${env.ENV_PY_PATH} -m pytest || exit 0
                 """
             }
         }
@@ -26,9 +27,9 @@ pipeline {
             steps{
                 bat "echo Stage: 3 Deploy ${env.PROJECT_NAME}"
                 bat """
-                .venv\\Scripts\\python.exe -m python manage.py makemigrations
-                .venv\\Scripts\\python.exe -m python manage.py migrate
-                REM .venv\\Scripts\\python.exe -m python manage.py runserver 8000 to start server
+                ${env.ENV_PY_PATH} manage.py makemigrations
+                ${env.ENV_PY_PATH} manage.py migrate
+                REM ${env.ENV_PY_PATH} -m python manage.py runserver 8000 to start server
                 """
             }
         }
