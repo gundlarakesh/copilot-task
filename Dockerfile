@@ -14,4 +14,4 @@ COPY . .
 EXPOSE 8000
 
 # Run gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "main:app"]
+CMD ["gunicorn", "it_chatbot_backend.wsgi:application", "--bind", "0.0.0.0:8000"]
