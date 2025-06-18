@@ -13,5 +13,7 @@ COPY . .
 # Expose the port your app will run on
 EXPOSE 8000
 
+RUN python manage.py collectstatic --noinput
+
 # Run gunicorn
 CMD ["gunicorn", "it_chatbot_backend.wsgi:application", "--bind", "0.0.0.0:8000"]
