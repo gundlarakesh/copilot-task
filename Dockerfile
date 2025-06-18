@@ -13,6 +13,7 @@ COPY . .
 # Expose the port your app will run on
 EXPOSE 8000
 
+RUN python manage.py migrate
 RUN python manage.py collectstatic --noinput
 
 # Run gunicorn
