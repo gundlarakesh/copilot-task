@@ -1,6 +1,6 @@
 # IT Chatbot Backend
 
-This project is a chatbot application designed to provide IT services such as ticket resolution, department management, and data retrieval based on user queries. It utilizes Django and Django REST Framework for the backend and integrates Google Generative AI for converting natural language queries into SQL.
+This project is a chatbot application designed to provide IT services such as ticket resolution, department management, and data retrieval based on user queries. It utilizes Django and Django REST Framework for the backend and integrates Google Generative AI for converting natural language queries into SQL. added for testing
 
 ## Project Structure
 
