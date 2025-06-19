@@ -18,14 +18,14 @@ COPY . .
 RUN python manage.py collectstatic --noinput
 
 # Stage 2: Runtime image
-FROM python:3.10-slim
+# FROM python:3.10-slim
 
-WORKDIR /app
+# WORKDIR /app
 
-# Copy installed Python packages from build stage
-COPY --from=build /install /usr/local
-# Copy application code
-COPY --from=build /app /app
+# # Copy installed Python packages from build stage
+# COPY --from=build /install /usr/local
+# # Copy application code
+# COPY --from=build /app /app
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
